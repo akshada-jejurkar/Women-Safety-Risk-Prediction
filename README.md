@@ -39,11 +39,19 @@ police presence, lighting conditions, and crowd density.
 
 ## 📁 Project Structure
 Women-Safety-Risk-Prediction/
+<<<<<<< HEAD
 │
 ├── data/
 ├── notebooks/
 ├── reports/
 ├── README.md
+=======
+   │
+   ├── data/
+   ├── notebooks/
+   ├── reports/
+   ├── README.md
+>>>>>>> 21789670f4e04cd55dc2c8190eb6ba6145ef49ad
 ## 🚀 How to Run
 1. Clone the repository
 2. Install required libraries
