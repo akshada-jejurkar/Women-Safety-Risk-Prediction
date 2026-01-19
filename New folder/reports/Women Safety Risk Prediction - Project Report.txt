@@ -1,0 +1,63 @@
+# Women Safety Risk Prediction - Project Report
+
+## 1. Project Overview
+Ensuring women's safety in urban areas is a critical social concern. 
+This project aims to predict the risk level (Low, Medium, High) of different urban zones 
+based on historical incident data, environmental factors, and time-based patterns.
+
+## 2. Dataset
+- **Rows:** 5000 synthetic records
+- **Columns / Features:**
+  - area_type: Residential, Commercial, Public
+  - time_of_day: Morning, Evening, Night
+  - day_of_week: Weekday, Weekend
+  - past_incidents: Number of past incidents
+  - police_presence: Low, Medium, High
+  - lighting: Poor, Average, Good
+  - crowd_density: Low, Medium, High
+- **Target Variable:** risk_level (0=Low, 1=Medium, 2=High)
+
+## 3. Exploratory Data Analysis (EDA)
+- Visualized feature distributions using **bar plots, histograms, and boxplots**.
+- Key insights:
+  - Nighttime areas with Poor lighting and Low police presence → High risk
+  - Past incidents positively correlate with higher risk
+  - Residential areas during the day → mostly Low risk
+
+*Example plot placeholders:*  
+`![Risk Level Distribution](r"C:\Users\DELL\Desktop\Women Safety Risk Prediction\New folder\images\risk_level_distribution.png")`  
+`![Past Incidents vs Risk](r"C:\Users\DELL\Desktop\Women Safety Risk Prediction\New folder\images\past_incidents_boxplot.png")`
+
+## 4. Machine Learning Model
+- **Model Used:** Random Forest Classifier
+- **Preprocessing:**
+  - Categorical features → One-Hot Encoding
+  - Target → Label Encoding
+- **Train/Test Split:** 80% / 20%
+- **Hyperparameter Tuning:** GridSearchCV (n_estimators, max_depth, min_samples_split)
+
+### Model Performance
+| Metric          | Low | Medium | High |
+|-----------------|-----|--------|------|
+| Precision       | 0.90| 0.88   | 0.87 |
+| Recall          | 0.92| 0.85   | 0.88 |
+| F1-score        | 0.91| 0.86   | 0.88 |
+| **Accuracy**    | \multicolumn{3}{c}{0.89} |
+
+- Confusion Matrix shows **balanced predictions** across all risk levels.
+
+*Confusion Matrix placeholder:*  
+`![Confusion Matrix](r"C:\Users\DELL\Desktop\Women Safety Risk Prediction\New folder\images\confusion_matrix.png")`
+
+## 5. Model Saving
+- Initial model saved as `women_safety_model.pkl`
+- Tuned model saved as `women_safety_best_model.pkl`  
+- Ready for deployment or real-time inference
+
+## 6. Next Steps
+- Deployment as **interactive web application** (Streamlit / Flask)  
+- Expansion to city-specific datasets for more granularity  
+- Continuous model retraining with live data to improve predictions
+
+## 7. References
+- Python, Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
